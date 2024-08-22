@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
     required: [true, "please enter product description!.."],
   },
   ratings: {
-    type: String,
+    type: Number,
     default: 0,
   },
   images: [
@@ -35,7 +35,7 @@ const productSchema = new mongoose.Schema({
       values: [
         "Electronics",
         "Mobile Phones",
-        "Laptop",
+        "Laptops",
         "Accessories",
         "Headphones",
         "Food",
@@ -46,7 +46,7 @@ const productSchema = new mongoose.Schema({
         "Books",
         "Health/Beauty",
       ],
-      message: "please select correct catagery",
+      message: "please select correct catagory",
     },
   },
   seller: {
@@ -72,18 +72,18 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      command: {
+      comment: {
         type: String,
         required: true,
       },
     },
   ],
-  createdAt:{
-    type:Date,
-    default:Date.now()
-  }
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-let schema = mongoose.model("product",productSchema);
+let schema = mongoose.model("Product",productSchema);
 
 module.exports = schema;

@@ -1,13 +1,13 @@
 const app = require("./app");
 const dotenv= require("dotenv");
 const path = require("path");
-const connectDatabase = require("./database");
-const port = process.env.PORT || 3000;
+const connectDatabase = require("../backend/config/database");
+
 
 dotenv.config({path:path.join(__dirname,"config/config.env")});
 
 connectDatabase();
 
-app.listen(port,()=>{
-    console.log("hello server created :"+port)
+app.listen(process.env.PORT,()=>{
+    console.log("hello server created :"+process.env.PORT)
 })
